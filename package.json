@@ -1,0 +1,18 @@
+{
+  "name": "samuraibs-tests",
+  "version": "1.0.0",
+  "description": "Projeto de testes de aceitação de ponta a ponta em Cypress",
+  "main": "index.js",
+  "author": "Julius Dantas",
+  "license": "MIT",
+  "scripts": {
+    "test": "npx cypress open",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox"
+  },
+  "devDependencies": {
+    "cypress": "^10.3.1",
+    "@faker-js/faker": "^7.3.0",
+    "pg": "^8.7.3"
+  }
+}

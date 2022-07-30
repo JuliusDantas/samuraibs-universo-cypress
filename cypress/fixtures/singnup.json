@@ -1,6 +1,23 @@
+
 {
-    "name": "julius teste 3",
-    "email": "juliusteste3@email.com",
-    "pwd": "pwd@123"
+    "success": {
+        "name": "julius teste 3",
+        "email": "juliusteste3@email.com",
+        "password": "pwd@123",
+        "is_provider": true
+    },
+
+    "email_inv": {
+        "name": "Teste email incorreto",
+        "email": "juliusteste3email.com",
+        "password": "pwd@123",
+        "is_provider": true
+    },
+
+    "short_password":{
+        "name": "Teste email incorreto",
+        "email": "juliustest3@email.com",
+        "password": null
+    }
     
 }

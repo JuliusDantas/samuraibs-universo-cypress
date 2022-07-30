@@ -13,6 +13,12 @@ class loginPage {
         cy.visit("/");
       }
 
+      removeUser(dadosCadastro) {
+        cy.task("removeUser", dadosCadastro.email).then(function (result) {
+          console.log(result);
+        });
+      }
+
       insertUser(dadosCadastro) {
         cy.request("POST", "http://localhost:3333/users", dadosCadastro).then(
           function (response) {
@@ -22,8 +28,12 @@ class loginPage {
       }
 
       form(dadosCadastro) {
-        cy.get(el.email).type(dadosCadastro.email), 
-        cy.get(el.password).type(dadosCadastro.password) 
+        cy.get(el.email)
+          .clear()
+          .type(dadosCadastro.email), 
+        cy.get(el.password)
+          .clear()
+          .type(dadosCadastro.password) 
       }
 
       form2(dadosCadastro) {

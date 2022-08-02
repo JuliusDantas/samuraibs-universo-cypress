@@ -25,10 +25,28 @@ module.exports = defineConfig({
             })
           })
           
+        },
+        findToken(email){
+          return new Promise(function(resolve){
+            pool.query(
+                'select B.token from public.users A ' +
+                'INNER JOIN public.user_tokens B ' +
+                'ON A.id = B.user_id ' +
+                'WHERE A.email = $1 ' +
+                'ORDER BY B.created_at', [email], function(error, result){
+              if(error){
+                throw error;
+              }
+              resolve({token: result.rows[0].token})
+            })
+          })         
+
         }
       })
     },
-    baseUrl: 'http://localhost:3000',    
+    // baseUrl: 'https://samuraibs-web-papito.herokuapp.com',
+    baseUrl: "http://localhost:3000",
+    // apiServer: "http://localhost:3333",    
   },
   // These settings apply everywhere unless overridden
   defaultCommandTimeout: 10000,

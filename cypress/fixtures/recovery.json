@@ -1,0 +1,12 @@
+{
+    "recovery_pwd": {
+        "name": "julius teste senha incorreta",
+        "email": "juliustestesenha@email.com",
+        "password": "pwd@123",
+        "is_provider": true
+    },
+    "new_pwd": {
+        "password": "pwd@123@@"
+    }
+    
+}

@@ -1,6 +1,6 @@
 exports.el = {
-    email: 'input[placeholder="E-mail"]',
-    password: 'input[placeholder="Senha"]',
+    email: 'input[placeholder*=email]',
+    password: 'input[placeholder*=senha]',
     signupButton: ('button[type="submit"]', "Entrar"),
     alert_email: ('small[class="alert-error"]', 'Informe um email válido'),
     alert_senha: ('small[class="alert-error"]', 'Pelo menos 6 caracteres'),

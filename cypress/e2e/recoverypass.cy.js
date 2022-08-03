@@ -1,11 +1,12 @@
 import recovery from "../support/pages/recovery";
-import resetpass from "../support/pages/resetpass";
+import rpPage from "../support/pages/resetpass";
 
 describe("reoverypass", function () {
     before(function () {
         cy.fixture("recovery.json")
             .then(function (recovery){
                 this.data = recovery;
+                
         })
     })
   context("quando o usuário esquece a senha", function () {
@@ -30,20 +31,19 @@ describe("reoverypass", function () {
         cy.postUser(this.data.recovery_pwd)
         cy.recoveryPass(this.data.recovery_pwd.email)
 
-        const token = Cypress.env('@recoveryToken')
-        resetpass.go(token);
-
-        
+                
     });
 
-    it("deve poder cadastrar uma nova senha", function () {       
-        resetpass.form(this.data.new_pwd.password, this.data.new_pwd.password);
-        resetpass.submit()
+    it("deve poder cadastrar uma nova senha", function () {
+        const teste = Cypress.env('recoveryToken')
+        console.log("teste 2: " , teste)
+        rpPage.go(teste)
+        
+        rpPage.form(this.data.new_pwd.password, this.data.new_pwd.password,)
+        rpPage.submit()
 
         const message = 'Agora você já pode logar com a sua nova senha secreta.'
-        resetpass.toast.shouldHaveText(message);
-
-        // cy.wait('5000')
+        recovery.toast.shouldHaveText(message);
         
     });
   });

@@ -10,8 +10,11 @@ class ResetPassPage {
       }
     
       go(token) {
-        cy.visit("/reset-password?token=" + token);
-      }
+        cy.visit('/reset-password?token=' + token)
+       
+        // cy.contains(el.title)
+        //     .should('be.visible')
+    }
 
       removeUser(dadosCadastro) {
         cy.task("removeUser", dadosCadastro.email).then(function (result) {

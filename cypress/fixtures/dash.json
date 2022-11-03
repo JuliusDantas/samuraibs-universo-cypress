@@ -1,0 +1,15 @@
+ {
+    "customer": {
+        "name": "Francisca Bill",
+        "email": "fbill@samuraibs.com",
+        "password": "pwd123",
+        "is_provider": false
+    },
+    "provider": {
+        "name": "Julius Dantas Barbeiro",
+        "email": "jdb@samuraibs.com",
+        "password": "pwd123",
+        "is_provider": true
+    },
+    "appointmentHour": "14:00"
+}

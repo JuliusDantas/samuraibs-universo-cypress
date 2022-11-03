@@ -3,6 +3,9 @@ const { Pool } = require('pg')
 
 module.exports = defineConfig({
   e2e: {
+    baseUrl: 'http://localhost:3000',
+    apiServer: 'http://localhost:3333',    
+
     setupNodeEvents(on, config) {
       // implement node event listeners here
       // Conexão com o banco de dados
@@ -46,8 +49,7 @@ module.exports = defineConfig({
       })
     },
     // baseUrl: 'https://samuraibs-web-papito.herokuapp.com',
-    baseUrl: "http://localhost:3000",
-    // apiServer: "http://localhost:3333",    
+    
   },
   // These settings apply everywhere unless overridden
   defaultCommandTimeout: 10000,

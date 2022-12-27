@@ -48,6 +48,7 @@ Cypress.Commands.add("postUser", function (dadosCadastro) {
 
   cy.request({
         method: 'POST',
+        // url: 'https://samuraibs-api-papito.fly.dev/users',
         url: 'http://localhost:3333/users',
         // url: `${apiServer}/users`,
         body: dadosCadastro      
@@ -61,8 +62,9 @@ Cypress.Commands.add("postUser", function (dadosCadastro) {
 Cypress.Commands.add("recoveryPass", function (email) {
   cy.request({
         method:"POST", 
-        url: `${apiServer}/password/forgot`, 
-        // url:"http://localhost:3333/password/forgot", 
+        // url: `${apiServer}/password/forgot`, 
+        // url:"https://samuraibs-api-papito.fly.dev/password/forgot", 
+        url:"http://localhost:3333/password/forgot", 
         body:{ email: email }
     }).then(function (response) {
       expect(response.status).to.eq(204);
@@ -97,6 +99,7 @@ Cypress.Commands.add('createAppointment', function (hour) {
         // url: apiServer + '/appointments',
         // url: `${apiServer}/appointments`,
         url: `http://localhost:3333/appointments`,
+        // url: `https://samuraibs-api-papito.fly.dev/appointments`,
         body: payload,
         headers: {
             authorization: 'Bearer ' + Cypress.env('apiToken')
@@ -114,6 +117,7 @@ Cypress.Commands.add('setproviderId', function (providerEmail) {
         method: 'GET',
         // url: `${apiServer}/providers`,
         url: 'http://localhost:3333/providers',
+        // url: 'https://samuraibs-api-papito.fly.dev/providers',
         headers: {
             authorization: 'Bearer ' + Cypress.env('apiToken')
         }
@@ -147,6 +151,7 @@ Cypress.Commands.add('apiLogin', function (user, setLocalStorage = false) {
         method: 'POST',
         // url: `${apiServer}/sessions`,
         url: 'http://localhost:3333/sessions',
+        // url: 'https://samuraibs-api-papito.fly.dev/sessions',
         body: payload
     })
     .then(function (response) {

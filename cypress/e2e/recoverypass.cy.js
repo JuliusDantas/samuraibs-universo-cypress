@@ -21,7 +21,8 @@ describe("reoverypass", function () {
         recovery.submit()
 
         // const message = "Ocorreu um erro ao tentar realizar a recuperação de senha"
-        const message = 'Enviamos um e-mail para confirmar a recuperação de senha, cheque sua caixa de entrada.'
+        const message = 'Ocorreu um erro ao tentar realizar a recuperação de senha'
+        // const message = 'Enviamos um e-mail para confirmar a recuperação de senha, cheque sua caixa de entrada.'
         recovery.toast.shouldHaveText(message);
         
     });
@@ -42,8 +43,10 @@ describe("reoverypass", function () {
         rpPage.form(this.data.new_pwd.password, this.data.new_pwd.password,)
         rpPage.submit()
 
-        const message = 'Agora você já pode logar com a sua nova senha secreta.'
+        const message = 'Ocorreu um erro ao tentar realizar a recuperação de senha'
+        // const message = 'Agora você já pode logar com a sua nova senha secreta.'
         recovery.toast.shouldHaveText(message);
+        
         
     });
   });

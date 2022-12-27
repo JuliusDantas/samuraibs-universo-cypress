@@ -5,6 +5,8 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
     apiServer: 'http://localhost:3333',    
+    // baseUrl: 'https://samuraibs-web-papito.fly.dev',
+    // apiServer: 'https://samuraibs-api-papito.fly.dev',  
 
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -52,7 +54,7 @@ module.exports = defineConfig({
     
   },
   // These settings apply everywhere unless overridden
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 30000,
   viewportWidth: 1440,
   viewportHeight: 900   
   
